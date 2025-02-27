@@ -1,0 +1,131 @@
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero's Slands</title>
+</head>
+<body>
+    <!-- Tela de Conexão com Steam -->
+    <div id="steam-login-screen">
+        <h1>Conecte-se com a sua Conta Steam</h1>
+        <button id="steam-login-button">Login com Steam</button>
+    </div>
+    
+    <!-- Tela de Início -->
+    <div id="start-screen" style="display: none;">
+        <h1>Hero's Slands</h1>
+        <p>Bem-vindo ao mundo dos heróis!</p>
+        
+        <!-- Seleção de Personagem -->
+        <div id="character-selection">
+            <h2>Selecione ou Crie um Personagem</h2>
+            <ul id="character-list">
+                <!-- Personagens serão listados aqui -->
+            </ul>
+            <button id="create-character">Criar Novo Personagem</button>
+        </div>
+
+        <!-- Seleção de Classe -->
+        <div id="class-selection" style="display: none;">
+            <h2>Escolha sua Classe</h2>
+            <button class="class-button" data-class="mago">🧙‍♂️ Mago</button>
+            <button class="class-button" data-class="arqueiro">🏹 Arqueiro</button>
+            <button class="class-button" data-class="tank">🛡️ Tank</button>
+            <button class="class-button" data-class="espadachim">⚔️ Espadachim</button>
+        </div>
+        
+        <button id="start-button">Iniciar Jogo</button>
+    </div>
+    
+    <!-- Tela de Carregamento -->
+    <div id="loading-screen" style="display: none;">
+        <h2>🔄 Carregando...</h2>
+        <p>Aguarde...</p>
+        <div id="loading-bar-container">
+            <div id="loading-bar"></div>
+        </div>
+    </div>
+    
+    <!-- Contêiner Principal do Jogo -->
+    <div id="game-container" style="display: none;">
+        
+        <!-- HUD (Painel do Jogador) -->
+        <div id="hud">
+            <div id="player-info">
+                <span id="class">⚔️ Classe: Nenhuma</span>
+                <span id="level">🔰 Nível: 1</span>
+                <span id="health">❤️ Vida: 100</span>
+                <span id="mana">🔵 Mana: 50</span>
+                <span id="xp">⭐ XP: 0</span>
+            </div>
+            <span id="score">Pontos: 0</span>
+            <span id="timer">⏳ Tempo: 00:00</span>
+        </div>
+        
+        <!-- Tela do Jogo -->
+        <div id="game-screen">
+            <canvas id="game-canvas"></canvas>
+            <div id="hero"><!-- Elemento do herói --></div>
+            <div id="enemies"><!-- Inimigos aparecem aqui --></div>
+            <div id="items"><!-- Itens do jogo --></div>
+        </div>
+        
+        <!-- Inventário -->
+        <div id="inventory">
+            <h2>🎒 Inventário</h2>
+            <ul id="inventory-list"></ul>
+        </div>
+        
+        <!-- Loja -->
+        <div id="shop">
+            <h2>🛒 Loja</h2>
+            <ul>
+                <li>Espada - 50 Ouro</li>
+                <li>Poção de Cura - 20 Ouro</li>
+                <li>Escudo - 70 Ouro</li>
+            </ul>
+            <button id="close-shop">Fechar Loja</button>
+        </div>
+        
+        <!-- Mapas e Áreas -->
+        <div id="map">
+            <h2>🌍 Mapas e Áreas</h2>
+            <ul>
+                <li>Cidade Inicial</li>
+                <li>Floresta Sombria</li>
+                <li>Montanha Gelada</li>
+            </ul>
+        </div>
+        
+        <!-- Sistema de Missões -->
+        <div id="quests">
+            <h2>📜 Missões</h2>
+            <ul id="quest-list">
+                <li>Derrote 10 inimigos - <span>Status: Em progresso</span></li>
+                <li>Encontre a Espada Lendária - <span>Status: Não iniciada</span></li>
+            </ul>
+        </div>
+        
+        <!-- Sistema de Save/Load -->
+        <div id="save-load">
+            <button id="save-game">Salvar Jogo</button>
+            <button id="load-game">Carregar Jogo</button>
+        </div>
+        
+        <!-- Botão para voltar ao menu -->
+        <div id="return-menu">
+            <button id="return-button">Voltar ao Menu</button>
+        </div>
+    </div>
+    <!-- Fim do game-container -->
+    
+    <!-- Áudio -->
+    <audio id="bg-music" loop>
+        <source src="audio/background-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="jump-sound">
+        <source src="audio/jump.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html>
